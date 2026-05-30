@@ -3,455 +3,643 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Expense Tracker – App Screenshots</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<title>Privacy Policy – Expense Tracker App</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: 'Poppins', sans-serif;
-    background: #0d0d14;
-    color: #fff;
+  :root {
+    --orange: #ff6b35;
+    --orange-light: #ff8c5a;
+    --orange-dark: #e5521a;
+    --bg: #faf8f5;
+    --surface: #ffffff;
+    --text: #1a1410;
+    --text-muted: #6b5e52;
+    --border: #ede8e2;
+    --accent-bg: #fff4ef;
   }
 
-  /* HERO */
-  .hero {
-    background: linear-gradient(135deg, #ff6b35, #f7931e 50%, #ff4e50);
-    text-align: center;
-    padding: 56px 24px 52px;
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: linear-gradient(135deg, var(--orange) 0%, #f7931e 60%, #ff4e50 100%);
+    color: white;
+    padding: 0;
     position: relative;
     overflow: hidden;
   }
-  .hero::after {
+  header::before {
     content: '';
     position: absolute; inset: 0;
-    background: radial-gradient(circle at 20% 80%, rgba(255,255,255,0.07), transparent 55%),
-                radial-gradient(circle at 80% 10%, rgba(0,0,0,0.1), transparent 50%);
+    background:
+      radial-gradient(circle at 10% 80%, rgba(255,255,255,0.08) 0%, transparent 50%),
+      radial-gradient(circle at 90% 20%, rgba(0,0,0,0.08) 0%, transparent 40%);
   }
-  .hero-badge {
-    display: inline-block;
-    background: rgba(255,255,255,0.18);
-    border: 1px solid rgba(255,255,255,0.35);
-    padding: 5px 18px;
-    border-radius: 50px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    margin-bottom: 18px;
-    position: relative; z-index: 1;
-  }
-  .hero h1 {
-    font-size: clamp(1.8rem, 5vw, 3rem);
-    font-weight: 900;
-    line-height: 1.15;
-    position: relative; z-index: 1;
-  }
-  .hero p {
-    margin-top: 10px;
-    font-size: 14px;
-    opacity: 0.85;
-    font-weight: 300;
-    position: relative; z-index: 1;
-  }
-
-  /* GRID */
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 28px;
-    padding: 52px 32px 64px;
-    max-width: 1300px;
+  .header-inner {
+    max-width: 780px;
     margin: 0 auto;
-  }
-
-  /* CARD */
-  .card {
-    border-radius: 24px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
-  }
-  .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 32px 64px rgba(0,0,0,0.5);
-  }
-
-  /* Phone image area — top half of card */
-  .card-img {
+    padding: 56px 32px 48px;
     position: relative;
-    padding: 28px 0 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    min-height: 280px;
   }
-  .card-1 .card-img { background: linear-gradient(160deg, #1a1a2e, #0f3460); }
-  .card-2 .card-img { background: linear-gradient(160deg, #0d1b2a, #415a77); }
-  .card-3 .card-img { background: linear-gradient(160deg, #2d1b00, #5c3200); }
-  .card-4 .card-img { background: linear-gradient(160deg, #0e2240, #1a3a5c); }
-  .card-5 .card-img { background: linear-gradient(160deg, #0f3b1f, #1a5c2e); }
-  .card-6 .card-img { background: linear-gradient(160deg, #2d1040, #4a1a6e); }
-
-  /* Glow blob behind phone */
-  .card-img::before {
-    content: '';
-    position: absolute;
-    width: 160px; height: 160px;
-    border-radius: 50%;
-    filter: blur(50px);
-    opacity: 0.35;
-    bottom: 10px; left: 50%;
-    transform: translateX(-50%);
-  }
-  .card-1 .card-img::before { background: #ff6b35; }
-  .card-2 .card-img::before { background: #4fc3f7; }
-  .card-3 .card-img::before { background: #ffb74d; }
-  .card-4 .card-img::before { background: #26c6da; }
-  .card-5 .card-img::before { background: #66bb6a; }
-  .card-6 .card-img::before { background: #ab47bc; }
-
-  /* Phone mockup */
-  .phone {
-    position: relative;
-    z-index: 2;
-    width: 148px;
-    background: #111;
-    border-radius: 32px;
-    padding: 8px;
-    box-shadow:
-      0 0 0 1px rgba(255,255,255,0.07),
-      0 0 0 3px #0a0a0a,
-      0 20px 50px rgba(0,0,0,0.6);
-  }
-  /* notch */
-  .phone::before {
-    content: '';
-    position: absolute;
-    top: 8px; left: 50%;
-    transform: translateX(-50%);
-    width: 52px; height: 16px;
-    background: #111;
-    border-radius: 0 0 12px 12px;
-    z-index: 5;
-  }
-  /* side button */
-  .phone::after {
-    content: '';
-    position: absolute;
-    right: -3px; top: 70px;
-    width: 3px; height: 44px;
-    background: #222;
-    border-radius: 0 3px 3px 0;
-  }
-  .phone-screen {
-    border-radius: 25px;
-    overflow: hidden;
-    background: #000;
-  }
-  .phone-screen img {
-    width: 100%;
-    display: block;
-  }
-
-  /* Floating badge on image area */
-  .badge {
-    position: absolute;
-    z-index: 10;
-    background: rgba(255,255,255,0.13);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.22);
-    border-radius: 12px;
-    padding: 7px 13px;
-    font-size: 11px;
-    font-weight: 700;
-    line-height: 1.3;
-    white-space: nowrap;
-  }
-  .badge .val {
-    display: block;
-    font-size: 15px;
-    font-weight: 800;
-    color: #ff6b35;
-  }
-  .badge-tr { top: 20px; right: 16px; }
-  .badge-tl { top: 20px; left: 16px; }
-
-  /* Screen number chip */
-  .screen-num {
-    position: absolute;
-    top: 16px; left: 16px;
-    width: 32px; height: 32px;
-    background: rgba(0,0,0,0.4);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 12px; font-weight: 800;
-    z-index: 10;
-    backdrop-filter: blur(6px);
-  }
-
-  /* INFO area — bottom half */
-  .card-info {
-    padding: 22px 22px 20px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .card-1 .card-info { background: #1a1f3c; }
-  .card-2 .card-info { background: #0e1e30; }
-  .card-3 .card-info { background: #1e1000; }
-  .card-4 .card-info { background: #081528; }
-  .card-5 .card-info { background: #091a0f; }
-  .card-6 .card-info { background: #180d28; }
-
-  .tag {
+  .app-pill {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    width: fit-content;
-    background: rgba(255,107,53,0.15);
-    border: 1px solid rgba(255,107,53,0.3);
-    padding: 3px 12px;
+    gap: 8px;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.35);
+    padding: 6px 16px 6px 10px;
     border-radius: 50px;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: #ff9060;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    backdrop-filter: blur(8px);
   }
-  .tag-dot {
-    width: 5px; height: 5px;
-    border-radius: 50%;
-    background: #ff6b35;
-    animation: blink 2s infinite;
+  .app-icon {
+    width: 28px; height: 28px;
+    background: rgba(255,255,255,0.25);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
   }
-  @keyframes blink {
-    0%,100%{opacity:1} 50%{opacity:0.3}
+  header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 16px;
   }
-
-  .card-title {
-    font-size: 1.15rem;
-    font-weight: 800;
-    line-height: 1.25;
-    color: #fff;
+  header h1 em {
+    font-style: italic;
+    opacity: 0.85;
   }
-  .card-desc {
-    font-size: 12.5px;
-    color: rgba(255,255,255,0.55);
-    font-weight: 300;
-    line-height: 1.65;
-    flex: 1;
+  .header-meta {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 20px;
   }
-
-  .card-footer-row {
+  .meta-chip {
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0.8;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding-top: 12px;
-    border-top: 1px solid rgba(255,255,255,0.07);
+    gap: 6px;
   }
-  .icons {
-    display: flex; gap: 7px;
+  .meta-chip::before {
+    content: '';
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.6);
   }
-  .ic {
-    width: 30px; height: 30px;
-    background: rgba(255,255,255,0.08);
-    border-radius: 9px;
+
+  /* ── STICKY NAV ── */
+  .sticky-nav {
+    position: sticky;
+    top: 0;
+    background: rgba(250,248,245,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+    padding: 0 32px;
+  }
+  .nav-inner {
+    max-width: 780px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .nav-inner::-webkit-scrollbar { display: none; }
+  .nav-link {
+    padding: 14px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-decoration: none;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    letter-spacing: 0.3px;
+  }
+  .nav-link:hover {
+    color: var(--orange);
+    border-bottom-color: var(--orange);
+  }
+
+  /* ── CONTENT ── */
+  .content {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 56px 32px 80px;
+  }
+
+  /* Section */
+  .section {
+    margin-bottom: 56px;
+    animation: fadeUp 0.5s ease both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .section-icon {
+    width: 44px; height: 44px;
+    min-width: 44px;
+    background: var(--accent-bg);
+    border: 1px solid #ffd5c2;
+    border-radius: 14px;
     display: flex; align-items: center; justify-content: center;
-    font-size: 13px;
+    font-size: 20px;
+    margin-top: 2px;
   }
-  .screen-label {
-    font-size: 10px;
-    color: rgba(255,255,255,0.25);
-    letter-spacing: 2px;
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.45rem;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.25;
+  }
+  .section-num {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--orange);
+    letter-spacing: 1.5px;
     text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  p {
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    font-size: 15px;
+  }
+  p:last-child { margin-bottom: 0; }
+
+  /* Highlight box */
+  .highlight {
+    background: var(--accent-bg);
+    border-left: 3px solid var(--orange);
+    border-radius: 0 12px 12px 0;
+    padding: 18px 22px;
+    margin: 20px 0;
+    font-size: 14px;
+    color: var(--text);
+  }
+  .highlight strong {
+    color: var(--orange-dark);
     font-weight: 600;
   }
 
-  /* FOOTER */
-  .footer {
-    text-align: center;
-    padding: 36px 20px;
-    border-top: 1px solid rgba(255,255,255,0.06);
+  /* List */
+  ul.policy-list {
+    list-style: none;
+    margin: 16px 0;
   }
-  .footer-name {
-    font-size: 1.6rem;
-    font-weight: 900;
-    background: linear-gradient(90deg, #ff6b35, #f7931e);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 6px;
+  ul.policy-list li {
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+    color: var(--text-muted);
+    align-items: flex-start;
   }
-  .footer p {
-    font-size: 11px;
-    color: rgba(255,255,255,0.25);
-    letter-spacing: 2px;
+  ul.policy-list li:last-child { border-bottom: none; }
+  ul.policy-list li::before {
+    content: '✓';
+    color: var(--orange);
+    font-weight: 700;
+    font-size: 13px;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  /* Data table */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 14px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .data-table th {
+    background: var(--orange);
+    color: white;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
+  }
+  .data-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-muted);
+    background: white;
+  }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:hover td { background: var(--accent-bg); }
+
+  /* Contact card */
+  .contact-card {
+    background: linear-gradient(135deg, var(--orange) 0%, #f7931e 100%);
+    border-radius: 20px;
+    padding: 32px;
+    color: white;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-card::after {
+    content: '💸';
+    position: absolute;
+    right: 24px; bottom: -10px;
+    font-size: 80px;
+    opacity: 0.15;
+  }
+  .contact-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+  }
+  .contact-card p {
+    color: rgba(255,255,255,0.8);
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+  .contact-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.35);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    backdrop-filter: blur(8px);
+  }
+
+  /* Divider */
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0 0 56px;
+  }
+
+  /* Footer */
+  footer {
+    background: var(--text);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 32px;
+    font-size: 13px;
+  }
+  footer strong { color: var(--orange); }
+
+  @media (max-width: 600px) {
+    .header-inner { padding: 40px 20px 36px; }
+    .content { padding: 40px 20px 60px; }
+    .sticky-nav { padding: 0 16px; }
+    .data-table { font-size: 12px; }
+    .data-table th, .data-table td { padding: 10px 12px; }
   }
 </style>
 </head>
 <body>
 
-<div class="hero">
-  <div class="hero-badge">📱 App Store Screenshots</div>
-  <h1>💸 Smart Expense Tracker</h1>
-  <p>Track income · Manage expenses · Stay within budget</p>
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="app-pill">
+      <div class="app-icon">💸</div>
+      Expense Tracker App
+    </div>
+    <h1>Privacy Policy<br><em>& Data Protection</em></h1>
+    <div class="header-meta">
+      <span class="meta-chip">Effective: May 29, 2026</span>
+      <span class="meta-chip">Last Updated: May 30, 2026</span>
+      <span class="meta-chip">Version 2.0</span>
+    </div>
+  </div>
+</header>
+
+<!-- STICKY NAV -->
+<nav class="sticky-nav">
+  <div class="nav-inner">
+    <a href="#intro" class="nav-link">Overview</a>
+    <a href="#data" class="nav-link">Data We Collect</a>
+    <a href="#use" class="nav-link">How We Use It</a>
+    <a href="#storage" class="nav-link">Storage</a>
+    <a href="#backup" class="nav-link">Backup & Restore</a>
+    <a href="#internet" class="nav-link">Internet Permission</a>
+    <a href="#third-party" class="nav-link">Third Parties</a>
+    <a href="#rights" class="nav-link">Your Rights</a>
+    <a href="#children" class="nav-link">Children</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </div>
+</nav>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <!-- INTRO -->
+  <div class="section" id="intro">
+    <div class="section-header">
+      <div class="section-icon">👋</div>
+      <div>
+        <div class="section-num">01 · Overview</div>
+        <div class="section-title">Welcome & Our Commitment</div>
+      </div>
+    </div>
+    <p>Thank you for using <strong>Expense Tracker</strong> — your personal finance companion. We are committed to protecting your privacy and being fully transparent about how your data is handled.</p>
+    <p>This Privacy Policy explains what information we collect, how we use it, and the choices you have. By using our app, you agree to the practices described in this policy.</p>
+    <div class="highlight">
+      <strong>🔒 Short Summary:</strong> Your financial data stays on your device. We do not sell, share, or upload your personal expense data to any external server.
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- DATA COLLECTED -->
+  <div class="section" id="data">
+    <div class="section-header">
+      <div class="section-icon">📋</div>
+      <div>
+        <div class="section-num">02 · Data Collection</div>
+        <div class="section-title">Information We Collect</div>
+      </div>
+    </div>
+    <p>Expense Tracker is designed with a <strong>privacy-first</strong> approach. Here is exactly what data exists within the app:</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Data Type</th>
+          <th>Purpose</th>
+          <th>Stored Where</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>💰 Income & Expense entries</td>
+          <td>Core app functionality</td>
+          <td>Your device only</td>
+        </tr>
+        <tr>
+          <td>🏷️ Categories (Food, Travel…)</td>
+          <td>Transaction organization</td>
+          <td>Your device only</td>
+        </tr>
+        <tr>
+          <td>📅 Dates & Notes</td>
+          <td>Transaction details</td>
+          <td>Your device only</td>
+        </tr>
+        <tr>
+          <td>🎯 Monthly budget amount</td>
+          <td>Budget tracking feature</td>
+          <td>Your device only</td>
+        </tr>
+        <tr>
+          <td>🌐 Language preference</td>
+          <td>App localization</td>
+          <td>Your device only</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="highlight">
+      <strong>We do NOT collect:</strong> your name, email address, phone number, location, contacts, photos, or any personally identifiable information.
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- HOW WE USE -->
+  <div class="section" id="use">
+    <div class="section-header">
+      <div class="section-icon">⚙️</div>
+      <div>
+        <div class="section-num">03 · Data Usage</div>
+        <div class="section-title">How We Use Your Information</div>
+      </div>
+    </div>
+    <p>All data entered into Expense Tracker is used solely to provide you with the app's features:</p>
+    <ul class="policy-list">
+      <li>Display your income and expense transaction history</li>
+      <li>Calculate total expenses and income summaries</li>
+      <li>Generate expense charts and category breakdowns</li>
+      <li>Track your budget and show remaining balance</li>
+      <li>Remember your preferred display language</li>
+      <li>Show ads via internet connection (the only use of internet in this app)</li>
+    </ul>
+    <p>We <strong>never</strong> use your data for advertising, profiling, or any purpose other than running the app features you see on screen.</p>
+  </div>
+
+  <hr>
+
+  <!-- STORAGE -->
+  <div class="section" id="storage">
+    <div class="section-header">
+      <div class="section-icon">💾</div>
+      <div>
+        <div class="section-num">04 · Data Storage</div>
+        <div class="section-title">Where Your Data Lives</div>
+      </div>
+    </div>
+    <p>All your financial data is stored <strong>locally on your device</strong> using Android's built-in local database (SQLite / SharedPreferences). This means:</p>
+    <ul class="policy-list">
+      <li>No data is ever uploaded to our servers or any cloud service</li>
+      <li>The app works fully offline — no internet connection required for core features</li>
+      <li>We have no access to your data — not even we can see it</li>
+      <li>Uninstalling the app will permanently delete all stored data (unless backed up)</li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <!-- BACKUP & RESTORE -->
+  <div class="section" id="backup">
+    <div class="section-header">
+      <div class="section-icon">🗄️</div>
+      <div>
+        <div class="section-num">05 · Backup & Restore</div>
+        <div class="section-title">Keep Your Data Safe</div>
+      </div>
+    </div>
+    <p>Expense Tracker includes a built-in <strong>Backup & Restore</strong> feature that allows you to save and recover your financial data. This feature has three options:</p>
+    <ul class="policy-list">
+      <li><strong>💾 Take Backup</strong> — exports all your transaction data as a <code style="background:#fff4ef;padding:1px 6px;border-radius:4px;font-size:13px;">JSON</code> file and saves it to your phone's <strong>Downloads folder</strong>. No internet required.</li>
+      <li><strong>🔄 Restore Data</strong> — imports a previously saved backup JSON file from your device storage and restores all your transactions. No internet required.</li>
+      <li><strong>👁️ View Backup</strong> — lets you preview the contents of a backup file before restoring. No internet required.</li>
+    </ul>
+    <div class="highlight">
+      <strong>🔒 Privacy Note:</strong> The backup file is saved <strong>only on your device</strong> (Downloads folder). It is never uploaded to any server or cloud. You are fully in control of where you store or share this file.
+    </div>
+    <div class="highlight" style="border-left-color:#e5521a; margin-top:12px;">
+      <strong>⚠️ Important Warning:</strong> If you uninstall the app without taking a backup, all your data will be permanently lost. We strongly recommend taking a backup regularly, especially before uninstalling or changing your phone.
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- INTERNET PERMISSION -->
+  <div class="section" id="internet">
+    <div class="section-header">
+      <div class="section-icon">🌐</div>
+      <div>
+        <div class="section-num">06 · Internet Permission</div>
+        <div class="section-title">Why We Use the Internet</div>
+      </div>
+    </div>
+    <p>Expense Tracker requests the <strong>INTERNET</strong> permission on your Android device. We want to be fully transparent about why:</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Permission</th>
+          <th>Reason</th>
+          <th>Your Data Involved?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>🌐 INTERNET</td>
+          <td>To display advertisements inside the app</td>
+          <td>No personal financial data</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="highlight">
+      <strong>📢 Ads Only:</strong> The internet connection in this app is used <strong>exclusively</strong> to show ads. Your income, expense, budget, and transaction data are <strong>never</strong> sent over the internet. All financial data remains on your device only.
+    </div>
+    <p>The app does <strong>not</strong> use the internet for: syncing data, analytics, tracking, login/registration, or any background data transmission.</p>
+  </div>
+
+  <hr>
+
+  <!-- THIRD PARTY -->
+  <div class="section" id="third-party">
+    <div class="section-header">
+      <div class="section-icon">🔗</div>
+      <div>
+        <div class="section-num">07 · Third Parties</div>
+        <div class="section-title">Third-Party Services</div>
+      </div>
+    </div>
+    <p>Expense Tracker is exclusively available on <strong>APKPure</strong>. We use the following third-party services:</p>
+    <ul class="policy-list">
+      <li><strong>APKPure</strong> — the only platform where this app is distributed and available for download</li>
+      <li><strong>Ad Network</strong> — Internet is used solely to display advertisements within the app. Ads may collect standard ad-related data as per the ad provider's own privacy policy</li>
+    </ul>
+    <p>We do not use internet for any other purpose — no analytics, no tracking, no uploading of your financial data.</p>
+  </div>
+
+  <hr>
+
+  <!-- RIGHTS -->
+  <div class="section" id="rights">
+    <div class="section-header">
+      <div class="section-icon">⚖️</div>
+      <div>
+        <div class="section-num">08 · Your Rights</div>
+        <div class="section-title">Control Over Your Data</div>
+      </div>
+    </div>
+    <p>Since all data is stored locally on your device, you have full and complete control:</p>
+    <ul class="policy-list">
+      <li><strong>Access:</strong> View all your data directly inside the app at any time</li>
+      <li><strong>Delete:</strong> Delete individual transactions or clear all data from within the app</li>
+      <li><strong>Erase all:</strong> Uninstalling the app removes all data permanently</li>
+      <li><strong>No account required:</strong> We never ask you to register or log in</li>
+    </ul>
+    <p>Because we do not collect or store your data on any server, there is nothing for us to provide, correct, or erase on your behalf — you already have 100% control.</p>
+  </div>
+
+  <hr>
+
+  <!-- CHILDREN -->
+  <div class="section" id="children">
+    <div class="section-header">
+      <div class="section-icon">👶</div>
+      <div>
+        <div class="section-num">09 · Children's Privacy</div>
+        <div class="section-title">Use by Children</div>
+      </div>
+    </div>
+    <p>Expense Tracker is designed for users <strong>aged 16 and above</strong>. We believe that personal finance tracking becomes relevant and meaningful from the age of 16, when individuals begin managing their own money, allowances, or part-time income.</p>
+    <p>The app is suitable for all adults of any age. We do not knowingly collect any personal information from users under the age of 16. If you are a parent or guardian and believe your child under 16 is using this app, please contact us.</p>
+  </div>
+
+  <hr>
+
+  <!-- CHANGES -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon">📝</div>
+      <div>
+        <div class="section-num">10 · Policy Updates</div>
+        <div class="section-title">Changes to This Policy</div>
+      </div>
+    </div>
+    <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last Updated" date at the top of this page. Continued use of the app after changes constitutes your acceptance of the revised policy.</p>
+    <p>We encourage you to review this policy periodically to stay informed about how we protect your information.</p>
+  </div>
+
+  <hr>
+
+  <!-- CONTACT -->
+  <div class="section" id="contact">
+    <div class="section-header">
+      <div class="section-icon">📬</div>
+      <div>
+        <div class="section-num">11 · Contact Us</div>
+        <div class="section-title">Questions or Concerns?</div>
+      </div>
+    </div>
+    <p>If you have any questions about this Privacy Policy or our data practices, we are happy to help. Please reach out to us:</p>
+    <div class="contact-card">
+      <h3>Get in Touch</h3>
+      <p>We typically respond within 2–3 business days.</p>
+      <a href="mailto:abdurrakib11996@gmail.com" class="contact-email">
+        ✉️ abdurrakib11996@gmail.com
+      </a>
+    </div>
+  </div>
+
 </div>
 
-<div class="grid">
-
-  <!-- 1: Income -->
-  <div class="card card-1">
-    <div class="card-img">
-      <div class="screen-num">01</div>
-      <div class="badge badge-tr"><span class="val">₹18,000</span>Salary</div>
-      <div class="phone">
-        <div class="phone-screen">
-          <img src="/mnt/user-data/uploads/1000212965.png" alt="Add Income">
-        </div>
-      </div>
-    </div>
-    <div class="card-info">
-      <div class="tag"><span class="tag-dot"></span>Income Tracking</div>
-      <div class="card-title">💰 Add Income Instantly</div>
-      <div class="card-desc">Record your salary or any earnings with category & date in just a few taps.</div>
-      <div class="card-footer-row">
-        <div class="icons">
-          <div class="ic">💵</div><div class="ic">📅</div><div class="ic">🏷️</div>
-        </div>
-        <span class="screen-label">Screen 01</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- 2: Expense -->
-  <div class="card card-2">
-    <div class="card-img">
-      <div class="screen-num">02</div>
-      <div class="badge badge-tr"><span class="val">₹2,000</span>School Fees</div>
-      <div class="phone">
-        <div class="phone-screen">
-          <img src="/mnt/user-data/uploads/1000212964.png" alt="Add Expense">
-        </div>
-      </div>
-    </div>
-    <div class="card-info">
-      <div class="tag"><span class="tag-dot"></span>Expense Entry</div>
-      <div class="card-title">📝 Log Every Expense</div>
-      <div class="card-desc">Record expenses by category — shopping, food, travel, school fees and more.</div>
-      <div class="card-footer-row">
-        <div class="icons">
-          <div class="ic">🛒</div><div class="ic">🍔</div><div class="ic">✈️</div>
-        </div>
-        <span class="screen-label">Screen 02</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- 3: Transactions -->
-  <div class="card card-3">
-    <div class="card-img">
-      <div class="screen-num">03</div>
-      <div class="badge badge-tr"><span class="val">₹10,500</span>Total Spent</div>
-      <div class="phone">
-        <div class="phone-screen">
-          <img src="/mnt/user-data/uploads/1000212967.png" alt="Transactions">
-        </div>
-      </div>
-    </div>
-    <div class="card-info">
-      <div class="tag"><span class="tag-dot"></span>All Transactions</div>
-      <div class="card-title">📋 Full Transaction History</div>
-      <div class="card-desc">View all income & expenses in one clean list. Filter by category and track patterns.</div>
-      <div class="card-footer-row">
-        <div class="icons">
-          <div class="ic">📊</div><div class="ic">🔍</div><div class="ic">📆</div>
-        </div>
-        <span class="screen-label">Screen 03</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- 4: Chart -->
-  <div class="card card-4">
-    <div class="card-img">
-      <div class="screen-num">04</div>
-      <div class="badge badge-tl"><span class="val">48%</span>Grocery</div>
-      <div class="phone">
-        <div class="phone-screen">
-          <img src="/mnt/user-data/uploads/1000212969.png" alt="Expense Chart">
-        </div>
-      </div>
-    </div>
-    <div class="card-info">
-      <div class="tag"><span class="tag-dot"></span>Visual Analytics</div>
-      <div class="card-title">📈 Beautiful Expense Charts</div>
-      <div class="card-desc">Interactive pie chart shows where your money goes — instantly see top spending categories.</div>
-      <div class="card-footer-row">
-        <div class="icons">
-          <div class="ic">🥧</div><div class="ic">📉</div><div class="ic">🎯</div>
-        </div>
-        <span class="screen-label">Screen 04</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- 5: Budget -->
-  <div class="card card-5">
-    <div class="card-img">
-      <div class="screen-num">05</div>
-      <div class="badge badge-tr"><span class="val">₹15,000</span>Budget Set</div>
-      <div class="phone">
-        <div class="phone-screen">
-          <img src="/mnt/user-data/uploads/1000212968.png" alt="Set Budget">
-        </div>
-      </div>
-    </div>
-    <div class="card-info">
-      <div class="tag"><span class="tag-dot"></span>Budget Goals</div>
-      <div class="card-title">🎯 Set Monthly Budget</div>
-      <div class="card-desc">Define your spending limit. Get alerted when approaching or exceeding your monthly goal.</div>
-      <div class="card-footer-row">
-        <div class="icons">
-          <div class="ic">💡</div><div class="ic">🔔</div><div class="ic">✅</div>
-        </div>
-        <span class="screen-label">Screen 05</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- 6: Language -->
-  <div class="card card-6">
-    <div class="card-img">
-      <div class="screen-num">06</div>
-      <div class="badge badge-tr"><span class="val">10+</span>Languages</div>
-      <div class="phone">
-        <div class="phone-screen">
-          <img src="/mnt/user-data/uploads/1000212970.png" alt="Language Settings">
-        </div>
-      </div>
-    </div>
-    <div class="card-info">
-      <div class="tag"><span class="tag-dot"></span>Multi-Language</div>
-      <div class="card-title">🌍 10+ Indian Languages</div>
-      <div class="card-desc">Full support for Hindi, Bengali, Marathi, Gujarati, Punjabi, Telugu, Tamil, Malayalam & more!</div>
-      <div class="card-footer-row">
-        <div class="icons">
-          <div class="ic">🇮🇳</div><div class="ic">🗣️</div><div class="ic">⚙️</div>
-        </div>
-        <span class="screen-label">Screen 06</span>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-<div class="footer">
-  <div class="footer-name">💸 Expense Tracker</div>
-  <p>Professional App Store Screenshots · APKPure Ready</p>
-</div>
+<!-- FOOTER -->
+<footer>
+  <p><strong>💸 Expense Tracker App</strong> · Privacy Policy · Version 2.0</p>
+  <p style="margin-top:8px;">© 2026 Expense Tracker. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
