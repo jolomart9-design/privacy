@@ -3,538 +3,443 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Expense Tracker - App Screenshots</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<title>Expense Tracker – App Screenshots</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   body {
     font-family: 'Poppins', sans-serif;
-    background: #0a0a0f;
-    color: white;
-    min-height: 100vh;
+    background: #0d0d14;
+    color: #fff;
   }
 
-  /* ===== HERO SECTION ===== */
+  /* HERO */
   .hero {
-    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 40%, #ff4e50 100%);
-    padding: 60px 40px 80px;
+    background: linear-gradient(135deg, #ff6b35, #f7931e 50%, #ff4e50);
     text-align: center;
+    padding: 56px 24px 52px;
     position: relative;
     overflow: hidden;
   }
-  .hero::before {
+  .hero::after {
     content: '';
-    position: absolute;
-    top: -50%; left: -50%;
-    width: 200%; height: 200%;
-    background: radial-gradient(circle at 30% 70%, rgba(255,255,255,0.08) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255,255,255,0.06) 0%, transparent 40%);
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 20% 80%, rgba(255,255,255,0.07), transparent 55%),
+                radial-gradient(circle at 80% 10%, rgba(0,0,0,0.1), transparent 50%);
   }
   .hero-badge {
     display: inline-block;
-    background: rgba(255,255,255,0.2);
-    border: 1px solid rgba(255,255,255,0.4);
-    padding: 6px 20px;
-    border-radius: 50px;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    backdrop-filter: blur(10px);
-  }
-  .hero h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 900;
-    line-height: 1.1;
-    margin-bottom: 16px;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.2);
-  }
-  .hero p {
-    font-size: 1.1rem;
-    opacity: 0.9;
-    font-weight: 300;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-  .hero-dots {
-    position: absolute;
-    top: 20px; right: 40px;
-    display: flex; gap: 8px;
-  }
-  .hero-dots span {
-    width: 10px; height: 10px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.3);
-  }
-  .hero-dots span:first-child { background: rgba(255,255,255,0.7); }
-
-  /* ===== GRID ===== */
-  .screenshots-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
-    padding: 60px 40px;
-    max-width: 1400px;
-    margin: 0 auto;
-  }
-
-  /* ===== CARD ===== */
-  .card {
-    position: relative;
-    border-radius: 28px;
-    overflow: hidden;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-  }
-  .card:hover {
-    transform: translateY(-8px) scale(1.01);
-    box-shadow: 0 40px 80px rgba(0,0,0,0.5);
-  }
-
-  /* Background gradients per card */
-  .card-1 { background: linear-gradient(145deg, #1a1a2e, #16213e, #0f3460); }
-  .card-2 { background: linear-gradient(145deg, #0d1b2a, #1b263b, #415a77); }
-  .card-3 { background: linear-gradient(145deg, #1a0a00, #2d1b00, #5c3200); }
-  .card-4 { background: linear-gradient(145deg, #0a1628, #0e2240, #1a3a5c); }
-  .card-5 { background: linear-gradient(145deg, #0d2818, #0f3b1f, #1a5c2e); }
-  .card-6 { background: linear-gradient(145deg, #1a0a1e, #2d1040, #4a1a6e); }
-
-  .card-inner {
-    padding: 36px 28px 28px;
-    position: relative;
-  }
-
-  /* Decorative blobs */
-  .blob {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(60px);
-    opacity: 0.25;
-    pointer-events: none;
-  }
-  .card-1 .blob-1 { width:180px;height:180px;background:#ff6b35;top:-40px;right:-40px; }
-  .card-1 .blob-2 { width:120px;height:120px;background:#4fc3f7;bottom:20px;left:-20px; }
-  .card-2 .blob-1 { width:200px;height:200px;background:#42a5f5;top:-60px;left:-40px; }
-  .card-2 .blob-2 { width:100px;height:100px;background:#ff6b35;bottom:40px;right:-10px; }
-  .card-3 .blob-1 { width:160px;height:160px;background:#ffb74d;top:-30px;right:-20px; }
-  .card-3 .blob-2 { width:130px;height:130px;background:#ff7043;bottom:10px;left:-30px; }
-  .card-4 .blob-1 { width:200px;height:200px;background:#26c6da;top:-50px;left:-50px; }
-  .card-4 .blob-2 { width:100px;height:100px;background:#7c4dff;bottom:30px;right:-10px; }
-  .card-5 .blob-1 { width:180px;height:180px;background:#66bb6a;top:-40px;right:-30px; }
-  .card-5 .blob-2 { width:120px;height:120px;background:#26a69a;bottom:20px;left:-20px; }
-  .card-6 .blob-1 { width:200px;height:200px;background:#ab47bc;top:-60px;right:-40px; }
-  .card-6 .blob-2 { width:100px;height:100px;background:#5c6bc0;bottom:10px;left:-20px; }
-
-  /* Number badge */
-  .card-number {
-    position: absolute;
-    top: 20px; left: 20px;
-    width: 36px; height: 36px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.15);
-    border: 1px solid rgba(255,255,255,0.25);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 13px; font-weight: 700;
-    backdrop-filter: blur(8px);
-    z-index: 10;
-  }
-
-  /* Feature tag */
-  .feature-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,255,255,0.2);
-    padding: 5px 14px;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.35);
+    padding: 5px 18px;
     border-radius: 50px;
     font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 1px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
     text-transform: uppercase;
-    margin-bottom: 20px;
-    position: relative; z-index: 5;
+    margin-bottom: 18px;
+    position: relative; z-index: 1;
   }
-  .feature-tag .dot {
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: #ff6b35;
-    animation: pulse 2s infinite;
+  .hero h1 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    font-weight: 900;
+    line-height: 1.15;
+    position: relative; z-index: 1;
   }
-  @keyframes pulse {
-    0%,100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(1.5); }
+  .hero p {
+    margin-top: 10px;
+    font-size: 14px;
+    opacity: 0.85;
+    font-weight: 300;
+    position: relative; z-index: 1;
   }
 
-  /* Phone mockup */
-  .phone-wrapper {
+  /* GRID */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+    padding: 52px 32px 64px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  /* CARD */
+  .card {
+    border-radius: 24px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 32px 64px rgba(0,0,0,0.5);
+  }
+
+  /* Phone image area — top half of card */
+  .card-img {
+    position: relative;
+    padding: 28px 0 0;
     display: flex;
     justify-content: center;
-    margin: 24px 0 28px;
-    position: relative; z-index: 5;
+    align-items: flex-end;
+    min-height: 280px;
   }
-  .phone-frame {
-    position: relative;
-    width: 200px;
-    background: #1a1a1a;
-    border-radius: 36px;
-    padding: 10px;
-    box-shadow:
-      0 0 0 1px rgba(255,255,255,0.08),
-      0 0 0 3px #111,
-      0 0 0 4px rgba(255,255,255,0.05),
-      0 30px 60px rgba(0,0,0,0.5),
-      inset 0 1px 0 rgba(255,255,255,0.1);
-  }
-  .phone-notch {
-    position: absolute;
-    top: 10px; left: 50%;
-    transform: translateX(-50%);
-    width: 70px; height: 22px;
-    background: #1a1a1a;
-    border-radius: 0 0 16px 16px;
-    z-index: 10;
-    display: flex; align-items: center; justify-content: center; gap: 6px;
-  }
-  .phone-notch::after {
+  .card-1 .card-img { background: linear-gradient(160deg, #1a1a2e, #0f3460); }
+  .card-2 .card-img { background: linear-gradient(160deg, #0d1b2a, #415a77); }
+  .card-3 .card-img { background: linear-gradient(160deg, #2d1b00, #5c3200); }
+  .card-4 .card-img { background: linear-gradient(160deg, #0e2240, #1a3a5c); }
+  .card-5 .card-img { background: linear-gradient(160deg, #0f3b1f, #1a5c2e); }
+  .card-6 .card-img { background: linear-gradient(160deg, #2d1040, #4a1a6e); }
+
+  /* Glow blob behind phone */
+  .card-img::before {
     content: '';
-    width: 8px; height: 8px;
+    position: absolute;
+    width: 160px; height: 160px;
     border-radius: 50%;
-    background: #2a2a2a;
-    box-shadow: inset 0 0 3px rgba(0,0,0,0.5);
+    filter: blur(50px);
+    opacity: 0.35;
+    bottom: 10px; left: 50%;
+    transform: translateX(-50%);
+  }
+  .card-1 .card-img::before { background: #ff6b35; }
+  .card-2 .card-img::before { background: #4fc3f7; }
+  .card-3 .card-img::before { background: #ffb74d; }
+  .card-4 .card-img::before { background: #26c6da; }
+  .card-5 .card-img::before { background: #66bb6a; }
+  .card-6 .card-img::before { background: #ab47bc; }
+
+  /* Phone mockup */
+  .phone {
+    position: relative;
+    z-index: 2;
+    width: 148px;
+    background: #111;
+    border-radius: 32px;
+    padding: 8px;
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.07),
+      0 0 0 3px #0a0a0a,
+      0 20px 50px rgba(0,0,0,0.6);
+  }
+  /* notch */
+  .phone::before {
+    content: '';
+    position: absolute;
+    top: 8px; left: 50%;
+    transform: translateX(-50%);
+    width: 52px; height: 16px;
+    background: #111;
+    border-radius: 0 0 12px 12px;
+    z-index: 5;
+  }
+  /* side button */
+  .phone::after {
+    content: '';
+    position: absolute;
+    right: -3px; top: 70px;
+    width: 3px; height: 44px;
+    background: #222;
+    border-radius: 0 3px 3px 0;
   }
   .phone-screen {
-    width: 100%;
-    border-radius: 28px;
+    border-radius: 25px;
     overflow: hidden;
     background: #000;
   }
   .phone-screen img {
     width: 100%;
     display: block;
-    object-fit: cover;
-  }
-  /* Side buttons */
-  .phone-frame::before {
-    content: '';
-    position: absolute;
-    right: -3px; top: 80px;
-    width: 3px; height: 50px;
-    background: #333;
-    border-radius: 0 3px 3px 0;
-  }
-  .phone-frame::after {
-    content: '';
-    position: absolute;
-    left: -3px; top: 80px;
-    width: 3px; height: 30px;
-    background: #333;
-    border-radius: 3px 0 0 3px;
-    box-shadow: 0 40px 0 #333;
   }
 
-  /* Floating stats on card */
-  .floating-stat {
+  /* Floating badge on image area */
+  .badge {
     position: absolute;
-    background: rgba(255,255,255,0.12);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 14px;
-    padding: 8px 14px;
+    z-index: 10;
+    background: rgba(255,255,255,0.13);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 12px;
+    padding: 7px 13px;
     font-size: 11px;
-    font-weight: 600;
-    z-index: 20;
+    font-weight: 700;
+    line-height: 1.3;
     white-space: nowrap;
   }
-  .floating-stat .val {
-    font-size: 16px;
-    font-weight: 800;
+  .badge .val {
     display: block;
+    font-size: 15px;
+    font-weight: 800;
     color: #ff6b35;
   }
+  .badge-tr { top: 20px; right: 16px; }
+  .badge-tl { top: 20px; left: 16px; }
 
-  /* Card text */
+  /* Screen number chip */
+  .screen-num {
+    position: absolute;
+    top: 16px; left: 16px;
+    width: 32px; height: 32px;
+    background: rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 800;
+    z-index: 10;
+    backdrop-filter: blur(6px);
+  }
+
+  /* INFO area — bottom half */
+  .card-info {
+    padding: 22px 22px 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .card-1 .card-info { background: #1a1f3c; }
+  .card-2 .card-info { background: #0e1e30; }
+  .card-3 .card-info { background: #1e1000; }
+  .card-4 .card-info { background: #081528; }
+  .card-5 .card-info { background: #091a0f; }
+  .card-6 .card-info { background: #180d28; }
+
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    width: fit-content;
+    background: rgba(255,107,53,0.15);
+    border: 1px solid rgba(255,107,53,0.3);
+    padding: 3px 12px;
+    border-radius: 50px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #ff9060;
+  }
+  .tag-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: #ff6b35;
+    animation: blink 2s infinite;
+  }
+  @keyframes blink {
+    0%,100%{opacity:1} 50%{opacity:0.3}
+  }
+
   .card-title {
-    font-size: 1.3rem;
+    font-size: 1.15rem;
     font-weight: 800;
-    margin-bottom: 8px;
-    position: relative; z-index: 5;
-    line-height: 1.2;
+    line-height: 1.25;
+    color: #fff;
   }
   .card-desc {
-    font-size: 0.82rem;
-    opacity: 0.65;
-    line-height: 1.6;
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.55);
     font-weight: 300;
-    position: relative; z-index: 5;
+    line-height: 1.65;
+    flex: 1;
   }
 
-  /* Bottom strip */
-  .card-footer {
-    margin-top: 20px;
-    padding-top: 16px;
-    border-top: 1px solid rgba(255,255,255,0.08);
+  .card-footer-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative; z-index: 5;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,0.07);
   }
-  .card-footer .icon-row {
-    display: flex; gap: 8px;
+  .icons {
+    display: flex; gap: 7px;
   }
-  .icon-chip {
-    width: 32px; height: 32px;
-    border-radius: 10px;
-    background: rgba(255,255,255,0.1);
+  .ic {
+    width: 30px; height: 30px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 9px;
     display: flex; align-items: center; justify-content: center;
-    font-size: 14px;
+    font-size: 13px;
   }
-  .card-footer .screen-label {
+  .screen-label {
     font-size: 10px;
-    opacity: 0.4;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-  }
-
-  /* ===== FOOTER ===== */
-  .page-footer {
-    text-align: center;
-    padding: 40px;
-    border-top: 1px solid rgba(255,255,255,0.06);
-  }
-  .page-footer p {
-    opacity: 0.3;
-    font-size: 12px;
+    color: rgba(255,255,255,0.25);
     letter-spacing: 2px;
     text-transform: uppercase;
+    font-weight: 600;
   }
-  .app-name-footer {
-    font-size: 1.8rem;
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    padding: 36px 20px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .footer-name {
+    font-size: 1.6rem;
     font-weight: 900;
     background: linear-gradient(90deg, #ff6b35, #f7931e);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
-
-  /* Glow line */
-  .glow-line {
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #ff6b35, #f7931e, transparent);
-    margin: 0 40px;
+  .footer p {
+    font-size: 11px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 2px;
+    text-transform: uppercase;
   }
 </style>
 </head>
 <body>
 
-<!-- HERO -->
 <div class="hero">
-  <div class="hero-dots">
-    <span></span><span></span><span></span>
-  </div>
   <div class="hero-badge">📱 App Store Screenshots</div>
-  <h1>Smart Expense<br>Tracker App</h1>
-  <p>Track income, manage expenses & stay within budget — all in one place</p>
+  <h1>💸 Smart Expense Tracker</h1>
+  <p>Track income · Manage expenses · Stay within budget</p>
 </div>
 
-<div class="glow-line"></div>
+<div class="grid">
 
-<!-- GRID -->
-<div class="screenshots-grid">
-
-  <!-- Card 1: Income Entry -->
+  <!-- 1: Income -->
   <div class="card card-1">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="card-inner">
-      <div class="card-number">01</div>
-      <div class="feature-tag"><span class="dot"></span> Income Tracking</div>
-
-      <div class="phone-wrapper">
-        <div class="phone-frame">
-          <div class="phone-notch"></div>
-          <div class="phone-screen">
-            <img src="/mnt/user-data/uploads/1000212965.png" alt="Add Income">
-          </div>
-        </div>
-        <div class="floating-stat" style="top:30px;right:-10px;">
-          <span class="val">₹18,000</span>Salary
+    <div class="card-img">
+      <div class="screen-num">01</div>
+      <div class="badge badge-tr"><span class="val">₹18,000</span>Salary</div>
+      <div class="phone">
+        <div class="phone-screen">
+          <img src="/mnt/user-data/uploads/1000212965.png" alt="Add Income">
         </div>
       </div>
-
+    </div>
+    <div class="card-info">
+      <div class="tag"><span class="tag-dot"></span>Income Tracking</div>
       <div class="card-title">💰 Add Income Instantly</div>
-      <div class="card-desc">Easily record your salary, freelance income or any earnings with category & date in seconds.</div>
-      <div class="card-footer">
-        <div class="icon-row">
-          <div class="icon-chip">💵</div>
-          <div class="icon-chip">📅</div>
-          <div class="icon-chip">🏷️</div>
+      <div class="card-desc">Record your salary or any earnings with category & date in just a few taps.</div>
+      <div class="card-footer-row">
+        <div class="icons">
+          <div class="ic">💵</div><div class="ic">📅</div><div class="ic">🏷️</div>
         </div>
         <span class="screen-label">Screen 01</span>
       </div>
     </div>
   </div>
 
-  <!-- Card 2: Add Expense -->
+  <!-- 2: Expense -->
   <div class="card card-2">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="card-inner">
-      <div class="card-number">02</div>
-      <div class="feature-tag"><span class="dot"></span> Expense Entry</div>
-
-      <div class="phone-wrapper">
-        <div class="phone-frame">
-          <div class="phone-notch"></div>
-          <div class="phone-screen">
-            <img src="/mnt/user-data/uploads/1000212964.png" alt="Add Expense">
-          </div>
-        </div>
-        <div class="floating-stat" style="bottom:80px;right:-10px;">
-          <span class="val">₹2,000</span>School Fees
+    <div class="card-img">
+      <div class="screen-num">02</div>
+      <div class="badge badge-tr"><span class="val">₹2,000</span>School Fees</div>
+      <div class="phone">
+        <div class="phone-screen">
+          <img src="/mnt/user-data/uploads/1000212964.png" alt="Add Expense">
         </div>
       </div>
-
+    </div>
+    <div class="card-info">
+      <div class="tag"><span class="tag-dot"></span>Expense Entry</div>
       <div class="card-title">📝 Log Every Expense</div>
-      <div class="card-desc">Record expenses by category — shopping, food, travel, school fees and more with just a few taps.</div>
-      <div class="card-footer">
-        <div class="icon-row">
-          <div class="icon-chip">🛒</div>
-          <div class="icon-chip">🍔</div>
-          <div class="icon-chip">✈️</div>
+      <div class="card-desc">Record expenses by category — shopping, food, travel, school fees and more.</div>
+      <div class="card-footer-row">
+        <div class="icons">
+          <div class="ic">🛒</div><div class="ic">🍔</div><div class="ic">✈️</div>
         </div>
         <span class="screen-label">Screen 02</span>
       </div>
     </div>
   </div>
 
-  <!-- Card 3: Transactions List -->
+  <!-- 3: Transactions -->
   <div class="card card-3">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="card-inner">
-      <div class="card-number">03</div>
-      <div class="feature-tag"><span class="dot"></span> All Transactions</div>
-
-      <div class="phone-wrapper">
-        <div class="phone-frame">
-          <div class="phone-notch"></div>
-          <div class="phone-screen">
-            <img src="/mnt/user-data/uploads/1000212967.png" alt="Transactions">
-          </div>
-        </div>
-        <div class="floating-stat" style="top:40px;right:-15px;">
-          <span class="val">₹10,500</span>Total Spent
+    <div class="card-img">
+      <div class="screen-num">03</div>
+      <div class="badge badge-tr"><span class="val">₹10,500</span>Total Spent</div>
+      <div class="phone">
+        <div class="phone-screen">
+          <img src="/mnt/user-data/uploads/1000212967.png" alt="Transactions">
         </div>
       </div>
-
+    </div>
+    <div class="card-info">
+      <div class="tag"><span class="tag-dot"></span>All Transactions</div>
       <div class="card-title">📋 Full Transaction History</div>
-      <div class="card-desc">View all your income & expenses in one clean list. Filter by category and track spending patterns.</div>
-      <div class="card-footer">
-        <div class="icon-row">
-          <div class="icon-chip">📊</div>
-          <div class="icon-chip">🔍</div>
-          <div class="icon-chip">📆</div>
+      <div class="card-desc">View all income & expenses in one clean list. Filter by category and track patterns.</div>
+      <div class="card-footer-row">
+        <div class="icons">
+          <div class="ic">📊</div><div class="ic">🔍</div><div class="ic">📆</div>
         </div>
         <span class="screen-label">Screen 03</span>
       </div>
     </div>
   </div>
 
-  <!-- Card 4: Expense Chart -->
+  <!-- 4: Chart -->
   <div class="card card-4">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="card-inner">
-      <div class="card-number">04</div>
-      <div class="feature-tag"><span class="dot"></span> Visual Analytics</div>
-
-      <div class="phone-wrapper">
-        <div class="phone-frame">
-          <div class="phone-notch"></div>
-          <div class="phone-screen">
-            <img src="/mnt/user-data/uploads/1000212969.png" alt="Expense Chart">
-          </div>
-        </div>
-        <div class="floating-stat" style="top:30px;left:-15px;">
-          <span class="val">48%</span>Grocery
+    <div class="card-img">
+      <div class="screen-num">04</div>
+      <div class="badge badge-tl"><span class="val">48%</span>Grocery</div>
+      <div class="phone">
+        <div class="phone-screen">
+          <img src="/mnt/user-data/uploads/1000212969.png" alt="Expense Chart">
         </div>
       </div>
-
+    </div>
+    <div class="card-info">
+      <div class="tag"><span class="tag-dot"></span>Visual Analytics</div>
       <div class="card-title">📈 Beautiful Expense Charts</div>
-      <div class="card-desc">Interactive pie chart shows where your money goes. Instantly see which category eats most of your budget.</div>
-      <div class="card-footer">
-        <div class="icon-row">
-          <div class="icon-chip">🥧</div>
-          <div class="icon-chip">📉</div>
-          <div class="icon-chip">🎯</div>
+      <div class="card-desc">Interactive pie chart shows where your money goes — instantly see top spending categories.</div>
+      <div class="card-footer-row">
+        <div class="icons">
+          <div class="ic">🥧</div><div class="ic">📉</div><div class="ic">🎯</div>
         </div>
         <span class="screen-label">Screen 04</span>
       </div>
     </div>
   </div>
 
-  <!-- Card 5: Set Budget -->
+  <!-- 5: Budget -->
   <div class="card card-5">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="card-inner">
-      <div class="card-number">05</div>
-      <div class="feature-tag"><span class="dot"></span> Budget Goals</div>
-
-      <div class="phone-wrapper">
-        <div class="phone-frame">
-          <div class="phone-notch"></div>
-          <div class="phone-screen">
-            <img src="/mnt/user-data/uploads/1000212968.png" alt="Set Budget">
-          </div>
-        </div>
-        <div class="floating-stat" style="bottom:80px;right:-15px;">
-          <span class="val">₹15,000</span>Budget Set
+    <div class="card-img">
+      <div class="screen-num">05</div>
+      <div class="badge badge-tr"><span class="val">₹15,000</span>Budget Set</div>
+      <div class="phone">
+        <div class="phone-screen">
+          <img src="/mnt/user-data/uploads/1000212968.png" alt="Set Budget">
         </div>
       </div>
-
+    </div>
+    <div class="card-info">
+      <div class="tag"><span class="tag-dot"></span>Budget Goals</div>
       <div class="card-title">🎯 Set Monthly Budget</div>
-      <div class="card-desc">Define your monthly spending limit. The app alerts you when you're approaching or exceeding your goal.</div>
-      <div class="card-footer">
-        <div class="icon-row">
-          <div class="icon-chip">💡</div>
-          <div class="icon-chip">🔔</div>
-          <div class="icon-chip">✅</div>
+      <div class="card-desc">Define your spending limit. Get alerted when approaching or exceeding your monthly goal.</div>
+      <div class="card-footer-row">
+        <div class="icons">
+          <div class="ic">💡</div><div class="ic">🔔</div><div class="ic">✅</div>
         </div>
         <span class="screen-label">Screen 05</span>
       </div>
     </div>
   </div>
 
-  <!-- Card 6: Language Settings -->
+  <!-- 6: Language -->
   <div class="card card-6">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="card-inner">
-      <div class="card-number">06</div>
-      <div class="feature-tag"><span class="dot"></span> Multi-Language</div>
-
-      <div class="phone-wrapper">
-        <div class="phone-frame">
-          <div class="phone-notch"></div>
-          <div class="phone-screen">
-            <img src="/mnt/user-data/uploads/1000212970.png" alt="Language Settings">
-          </div>
-        </div>
-        <div class="floating-stat" style="top:30px;right:-15px;">
-          <span class="val">10+</span>Languages
+    <div class="card-img">
+      <div class="screen-num">06</div>
+      <div class="badge badge-tr"><span class="val">10+</span>Languages</div>
+      <div class="phone">
+        <div class="phone-screen">
+          <img src="/mnt/user-data/uploads/1000212970.png" alt="Language Settings">
         </div>
       </div>
-
+    </div>
+    <div class="card-info">
+      <div class="tag"><span class="tag-dot"></span>Multi-Language</div>
       <div class="card-title">🌍 10+ Indian Languages</div>
       <div class="card-desc">Full support for Hindi, Bengali, Marathi, Gujarati, Punjabi, Telugu, Tamil, Malayalam & more!</div>
-      <div class="card-footer">
-        <div class="icon-row">
-          <div class="icon-chip">🇮🇳</div>
-          <div class="icon-chip">🗣️</div>
-          <div class="icon-chip">⚙️</div>
+      <div class="card-footer-row">
+        <div class="icons">
+          <div class="ic">🇮🇳</div><div class="ic">🗣️</div><div class="ic">⚙️</div>
         </div>
         <span class="screen-label">Screen 06</span>
       </div>
@@ -543,9 +448,8 @@
 
 </div>
 
-<!-- FOOTER -->
-<div class="page-footer">
-  <div class="app-name-footer">💸 Expense Tracker</div>
+<div class="footer">
+  <div class="footer-name">💸 Expense Tracker</div>
   <p>Professional App Store Screenshots · APKPure Ready</p>
 </div>
 
