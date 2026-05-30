@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expense Tracker - App Screenshots</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #0a0a0f;
+    color: white;
+    min-height: 100vh;
+  }
+
+  /* ===== HERO SECTION ===== */
+  .hero {
+    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 40%, #ff4e50 100%);
+    padding: 60px 40px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle at 30% 70%, rgba(255,255,255,0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255,255,255,0.06) 0%, transparent 40%);
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.4);
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+  .hero p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    font-weight: 300;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .hero-dots {
+    position: absolute;
+    top: 20px; right: 40px;
+    display: flex; gap: 8px;
+  }
+  .hero-dots span {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+  }
+  .hero-dots span:first-child { background: rgba(255,255,255,0.7); }
+
+  /* ===== GRID ===== */
+  .screenshots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    padding: 60px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* ===== CARD ===== */
+  .card {
+    position: relative;
+    border-radius: 28px;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  .card:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+  }
+
+  /* Background gradients per card */
+  .card-1 { background: linear-gradient(145deg, #1a1a2e, #16213e, #0f3460); }
+  .card-2 { background: linear-gradient(145deg, #0d1b2a, #1b263b, #415a77); }
+  .card-3 { background: linear-gradient(145deg, #1a0a00, #2d1b00, #5c3200); }
+  .card-4 { background: linear-gradient(145deg, #0a1628, #0e2240, #1a3a5c); }
+  .card-5 { background: linear-gradient(145deg, #0d2818, #0f3b1f, #1a5c2e); }
+  .card-6 { background: linear-gradient(145deg, #1a0a1e, #2d1040, #4a1a6e); }
+
+  .card-inner {
+    padding: 36px 28px 28px;
+    position: relative;
+  }
+
+  /* Decorative blobs */
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.25;
+    pointer-events: none;
+  }
+  .card-1 .blob-1 { width:180px;height:180px;background:#ff6b35;top:-40px;right:-40px; }
+  .card-1 .blob-2 { width:120px;height:120px;background:#4fc3f7;bottom:20px;left:-20px; }
+  .card-2 .blob-1 { width:200px;height:200px;background:#42a5f5;top:-60px;left:-40px; }
+  .card-2 .blob-2 { width:100px;height:100px;background:#ff6b35;bottom:40px;right:-10px; }
+  .card-3 .blob-1 { width:160px;height:160px;background:#ffb74d;top:-30px;right:-20px; }
+  .card-3 .blob-2 { width:130px;height:130px;background:#ff7043;bottom:10px;left:-30px; }
+  .card-4 .blob-1 { width:200px;height:200px;background:#26c6da;top:-50px;left:-50px; }
+  .card-4 .blob-2 { width:100px;height:100px;background:#7c4dff;bottom:30px;right:-10px; }
+  .card-5 .blob-1 { width:180px;height:180px;background:#66bb6a;top:-40px;right:-30px; }
+  .card-5 .blob-2 { width:120px;height:120px;background:#26a69a;bottom:20px;left:-20px; }
+  .card-6 .blob-1 { width:200px;height:200px;background:#ab47bc;top:-60px;right:-40px; }
+  .card-6 .blob-2 { width:100px;height:100px;background:#5c6bc0;bottom:10px;left:-20px; }
+
+  /* Number badge */
+  .card-number {
+    position: absolute;
+    top: 20px; left: 20px;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700;
+    backdrop-filter: blur(8px);
+    z-index: 10;
+  }
+
+  /* Feature tag */
+  .feature-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 5px 14px;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    position: relative; z-index: 5;
+  }
+  .feature-tag .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #ff6b35;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%,100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.5); }
+  }
+
+  /* Phone mockup */
+  .phone-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 24px 0 28px;
+    position: relative; z-index: 5;
+  }
+  .phone-frame {
+    position: relative;
+    width: 200px;
+    background: #1a1a1a;
+    border-radius: 36px;
+    padding: 10px;
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.08),
+      0 0 0 3px #111,
+      0 0 0 4px rgba(255,255,255,0.05),
+      0 30px 60px rgba(0,0,0,0.5),
+      inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .phone-notch {
+    position: absolute;
+    top: 10px; left: 50%;
+    transform: translateX(-50%);
+    width: 70px; height: 22px;
+    background: #1a1a1a;
+    border-radius: 0 0 16px 16px;
+    z-index: 10;
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+  }
+  .phone-notch::after {
+    content: '';
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #2a2a2a;
+    box-shadow: inset 0 0 3px rgba(0,0,0,0.5);
+  }
+  .phone-screen {
+    width: 100%;
+    border-radius: 28px;
+    overflow: hidden;
+    background: #000;
+  }
+  .phone-screen img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+  }
+  /* Side buttons */
+  .phone-frame::before {
+    content: '';
+    position: absolute;
+    right: -3px; top: 80px;
+    width: 3px; height: 50px;
+    background: #333;
+    border-radius: 0 3px 3px 0;
+  }
+  .phone-frame::after {
+    content: '';
+    position: absolute;
+    left: -3px; top: 80px;
+    width: 3px; height: 30px;
+    background: #333;
+    border-radius: 3px 0 0 3px;
+    box-shadow: 0 40px 0 #333;
+  }
+
+  /* Floating stats on card */
+  .floating-stat {
+    position: absolute;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 14px;
+    padding: 8px 14px;
+    font-size: 11px;
+    font-weight: 600;
+    z-index: 20;
+    white-space: nowrap;
+  }
+  .floating-stat .val {
+    font-size: 16px;
+    font-weight: 800;
+    display: block;
+    color: #ff6b35;
+  }
+
+  /* Card text */
+  .card-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    position: relative; z-index: 5;
+    line-height: 1.2;
+  }
+  .card-desc {
+    font-size: 0.82rem;
+    opacity: 0.65;
+    line-height: 1.6;
+    font-weight: 300;
+    position: relative; z-index: 5;
+  }
+
+  /* Bottom strip */
+  .card-footer {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative; z-index: 5;
+  }
+  .card-footer .icon-row {
+    display: flex; gap: 8px;
+  }
+  .icon-chip {
+    width: 32px; height: 32px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.1);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+  }
+  .card-footer .screen-label {
+    font-size: 10px;
+    opacity: 0.4;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+
+  /* ===== FOOTER ===== */
+  .page-footer {
+    text-align: center;
+    padding: 40px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .page-footer p {
+    opacity: 0.3;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .app-name-footer {
+    font-size: 1.8rem;
+    font-weight: 900;
+    background: linear-gradient(90deg, #ff6b35, #f7931e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+  }
+
+  /* Glow line */
+  .glow-line {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ff6b35, #f7931e, transparent);
+    margin: 0 40px;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-dots">
+    <span></span><span></span><span></span>
+  </div>
+  <div class="hero-badge">📱 App Store Screenshots</div>
+  <h1>Smart Expense<br>Tracker App</h1>
+  <p>Track income, manage expenses & stay within budget — all in one place</p>
+</div>
+
+<div class="glow-line"></div>
+
+<!-- GRID -->
+<div class="screenshots-grid">
+
+  <!-- Card 1: Income Entry -->
+  <div class="card card-1">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="card-inner">
+      <div class="card-number">01</div>
+      <div class="feature-tag"><span class="dot"></span> Income Tracking</div>
+
+      <div class="phone-wrapper">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <img src="/mnt/user-data/uploads/1000212965.png" alt="Add Income">
+          </div>
+        </div>
+        <div class="floating-stat" style="top:30px;right:-10px;">
+          <span class="val">₹18,000</span>Salary
+        </div>
+      </div>
+
+      <div class="card-title">💰 Add Income Instantly</div>
+      <div class="card-desc">Easily record your salary, freelance income or any earnings with category & date in seconds.</div>
+      <div class="card-footer">
+        <div class="icon-row">
+          <div class="icon-chip">💵</div>
+          <div class="icon-chip">📅</div>
+          <div class="icon-chip">🏷️</div>
+        </div>
+        <span class="screen-label">Screen 01</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 2: Add Expense -->
+  <div class="card card-2">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="card-inner">
+      <div class="card-number">02</div>
+      <div class="feature-tag"><span class="dot"></span> Expense Entry</div>
+
+      <div class="phone-wrapper">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <img src="/mnt/user-data/uploads/1000212964.png" alt="Add Expense">
+          </div>
+        </div>
+        <div class="floating-stat" style="bottom:80px;right:-10px;">
+          <span class="val">₹2,000</span>School Fees
+        </div>
+      </div>
+
+      <div class="card-title">📝 Log Every Expense</div>
+      <div class="card-desc">Record expenses by category — shopping, food, travel, school fees and more with just a few taps.</div>
+      <div class="card-footer">
+        <div class="icon-row">
+          <div class="icon-chip">🛒</div>
+          <div class="icon-chip">🍔</div>
+          <div class="icon-chip">✈️</div>
+        </div>
+        <span class="screen-label">Screen 02</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3: Transactions List -->
+  <div class="card card-3">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="card-inner">
+      <div class="card-number">03</div>
+      <div class="feature-tag"><span class="dot"></span> All Transactions</div>
+
+      <div class="phone-wrapper">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <img src="/mnt/user-data/uploads/1000212967.png" alt="Transactions">
+          </div>
+        </div>
+        <div class="floating-stat" style="top:40px;right:-15px;">
+          <span class="val">₹10,500</span>Total Spent
+        </div>
+      </div>
+
+      <div class="card-title">📋 Full Transaction History</div>
+      <div class="card-desc">View all your income & expenses in one clean list. Filter by category and track spending patterns.</div>
+      <div class="card-footer">
+        <div class="icon-row">
+          <div class="icon-chip">📊</div>
+          <div class="icon-chip">🔍</div>
+          <div class="icon-chip">📆</div>
+        </div>
+        <span class="screen-label">Screen 03</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 4: Expense Chart -->
+  <div class="card card-4">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="card-inner">
+      <div class="card-number">04</div>
+      <div class="feature-tag"><span class="dot"></span> Visual Analytics</div>
+
+      <div class="phone-wrapper">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <img src="/mnt/user-data/uploads/1000212969.png" alt="Expense Chart">
+          </div>
+        </div>
+        <div class="floating-stat" style="top:30px;left:-15px;">
+          <span class="val">48%</span>Grocery
+        </div>
+      </div>
+
+      <div class="card-title">📈 Beautiful Expense Charts</div>
+      <div class="card-desc">Interactive pie chart shows where your money goes. Instantly see which category eats most of your budget.</div>
+      <div class="card-footer">
+        <div class="icon-row">
+          <div class="icon-chip">🥧</div>
+          <div class="icon-chip">📉</div>
+          <div class="icon-chip">🎯</div>
+        </div>
+        <span class="screen-label">Screen 04</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 5: Set Budget -->
+  <div class="card card-5">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="card-inner">
+      <div class="card-number">05</div>
+      <div class="feature-tag"><span class="dot"></span> Budget Goals</div>
+
+      <div class="phone-wrapper">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <img src="/mnt/user-data/uploads/1000212968.png" alt="Set Budget">
+          </div>
+        </div>
+        <div class="floating-stat" style="bottom:80px;right:-15px;">
+          <span class="val">₹15,000</span>Budget Set
+        </div>
+      </div>
+
+      <div class="card-title">🎯 Set Monthly Budget</div>
+      <div class="card-desc">Define your monthly spending limit. The app alerts you when you're approaching or exceeding your goal.</div>
+      <div class="card-footer">
+        <div class="icon-row">
+          <div class="icon-chip">💡</div>
+          <div class="icon-chip">🔔</div>
+          <div class="icon-chip">✅</div>
+        </div>
+        <span class="screen-label">Screen 05</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 6: Language Settings -->
+  <div class="card card-6">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="card-inner">
+      <div class="card-number">06</div>
+      <div class="feature-tag"><span class="dot"></span> Multi-Language</div>
+
+      <div class="phone-wrapper">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <img src="/mnt/user-data/uploads/1000212970.png" alt="Language Settings">
+          </div>
+        </div>
+        <div class="floating-stat" style="top:30px;right:-15px;">
+          <span class="val">10+</span>Languages
+        </div>
+      </div>
+
+      <div class="card-title">🌍 10+ Indian Languages</div>
+      <div class="card-desc">Full support for Hindi, Bengali, Marathi, Gujarati, Punjabi, Telugu, Tamil, Malayalam & more!</div>
+      <div class="card-footer">
+        <div class="icon-row">
+          <div class="icon-chip">🇮🇳</div>
+          <div class="icon-chip">🗣️</div>
+          <div class="icon-chip">⚙️</div>
+        </div>
+        <span class="screen-label">Screen 06</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="page-footer">
+  <div class="app-name-footer">💸 Expense Tracker</div>
+  <p>Professional App Store Screenshots · APKPure Ready</p>
+</div>
+
+</body>
+</html>
